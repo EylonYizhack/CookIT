@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:solid="http://schemas.android.com/apk/res-auto"
+    tools:context="com.chatter.android.activity_recpietoupload.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/toolBar"
+        android:background="#FAA039" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="רשימת מצרכים"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/relativeLayout"
+        android:background="#FAA039">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="אישור"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="38dp"
+            android:onClick="dSave"
+            android:background="@drawable/buttoncustom2"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="ביטול"
+            android:id="@+id/button"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="32dp"
+            android:onClick="dCanceled"
+            android:background="@drawable/buttoncustom2"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:textDirection="rtl"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_below="@+id/toolBar"
+        android:layout_above="@+id/relativeLayout"
+        android:id="@+id/linearLayout">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.16"
+            android:weightSum="1">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/amountNum"
+                android:hint="0" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="גרם"
+                android:id="@+id/editAmount"
+                android:onClick="insertAmount"
+                android:gravity="center"
+                android:textDirection="rtl"
+                android:layoutDirection="rtl"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/amountNum"
+                android:layout_alignBottom="@+id/amountNum"
+                android:background="#ffffff" />
+
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="הזן מרכיב"
+                android:id="@+id/editIng"
+                android:gravity="center"
+                android:textDirection="rtl"
+                android:layoutDirection="rtl"
+                android:layout_alignParentTop="true"
+                android:layout_alignEnd="@+id/amountNum"
+                android:layout_weight="0.95" />
+            <Button
+                android:background="@drawable/buttoncustom2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="שמור"
+                android:onClick="save"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/editAmount" />
+        </LinearLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listViewIng"
+            android:layoutDirection="rtl"
+            android:textDirection="rtl"
+            android:contextClickable="true"
+            >
+        </ListView>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
